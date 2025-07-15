@@ -9,7 +9,8 @@
     "backend:build": "node src/server.js",
     "backend:development": "nodemon src/server.js",
     "build": "npm run frontend:production",
-    "start": "npm run build && npm run backend:build"
+    "start": "npm run build && npm run backend:build",
+    "start-concurrently": "npm run --concurrently build && npm run backend:build"
   },
   "repository": {
     "type": "git",
