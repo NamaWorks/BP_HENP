@@ -1,5 +1,8 @@
 const express = require('express');
 const path = require('path');
+const { getApiData } = require('./utils/api');
+
+require('dotenv').config()
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -12,12 +15,14 @@ app.set('views', path.join(__dirname, '/views'));
 app.use(express.static(path.join(__dirname, '../dist')));
 
 // Home route renders the Pug template
-app.get('/', (req, res) => {
-  // res.render('index.pug',{
-  //   cache: true,
-  //   filename: 'index'
-  // });
-  res.render('index')
+app.get('/', async (req, res) => {
+
+  const home = await getApiData('pages');
+  console.log(home)
+
+  res.render('pages/home', {
+    home
+  })
 });
 
 app.get('/about', (req, res) => {

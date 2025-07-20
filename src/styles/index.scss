@@ -1,3 +1,9 @@
-* {
-  background-color: green;
-}
+@import './base/fonts.scss';
+@import './base/reset.scss';
+
+@import './shared/links.scss';
+@import './shared/titles.scss';
+
+@import './pages/about.scss';
+@import './pages/home.scss';
+
