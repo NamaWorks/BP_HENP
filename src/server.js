@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const { getApiData } = require('./utils/api');
+const { getApiData } = require('./api/utils');
 
 require('dotenv').config()
 
